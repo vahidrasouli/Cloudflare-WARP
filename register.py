@@ -86,7 +86,7 @@ def do_register() -> AccountData:
 
     response.raise_for_status()
     response = json.loads(response.content)
-    txt1= "Response is {fname}".format(fname =  response)
+    txt= "Response is {fname}".format(fname =  response)
     print(txt)
     return AccountData(response["id"], response["token"], private_key)
 
