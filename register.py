@@ -113,6 +113,8 @@ def enable_warp(account_data: AccountData):
 
     response.raise_for_status()
     response = json.loads(response.content)
+    txt1 = "Response-2 is {fname}".format(fname =  response)
+    print(txt1)
     assert response["warp_enabled"] == True
 
 
@@ -123,6 +125,8 @@ def get_server_conf(account_data: AccountData) -> ConfigurationData:
     response = requests.get(get_config_url(account_data.account_id), headers=headers, verify=get_verify())
 
     response.raise_for_status()
+    txt1 = "Response-3 is {fname}".format(fname =  response)
+    print(txt1)
     response = json.loads(response.content)
 
     addresses = response["config"]["interface"]["addresses"]
